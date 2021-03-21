@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+
+#  mosquitto:
+#    build:
+#      context: mosquitto
+#      dockerfile: Dockerfile
+#      args:
+#        - MOSQUITTO_VERSION=${MOSQUITTO_VERSION:-latest}
+#    environment:
+#      - MOSQUITTO_USERNAME=mosquitto
+#      - MOSQUITTO_PASSWORD=mosquitto
+#    image: eclipse-mosquitto:${MOSQUITTO_VERSION:-latest}
+#    container_name: eclipse-mosquitto
+#    restart: always
+#    volumes:
+#      - ./mosquitto/data:/mosquitto/data
+#      - ./mosquitto/log:/mosquitto/log
+#    ports:
+#      - 1883:1883
+#
+#  mongodb_container:
+#    image: mongo:latest
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: home
+#      MONGO_INITDB_ROOT_PASSWORD: changeme
+#    volumes:
+#      - ./mongodb_data:/data/db
+
+  api:
+    build:
+      context: ApiGateway
+    ports:
+    - 80:8090
+
+  device:
+    build:
+      context: deviceManagement
+    ports:
+      - 50051:50051

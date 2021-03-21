@@ -1,0 +1,6 @@
+version: v1beta1
+name: buf.build/myuser/myrepo
+deps:
+build:
+  roots:
+    - proto
