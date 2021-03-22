@@ -1,8 +1,7 @@
 UpdateFirmware/bin
 UpdateFirmware/arduino-cli
 .idea
-deviceManagement/proto/
-!deviceManagement/proto/device/device.proto
-
-ApiGateway/proto
+deviceManagement/proto/*
+ApiGateway/proto/*
 !ApiGateway/proto/api/api.proto
+!deviceManagement/proto/device/device.proto
