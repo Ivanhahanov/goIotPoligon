@@ -1,0 +1,29 @@
+syntax = "proto3";
+package device;
+option go_package = "github.com/Ivanhahanov/IotPoligon/deviceManagement/device";
+
+// Here is the overall greeting service definition where we define all our endpoints
+service Greeter {
+  // Sends a greeting
+  rpc AddDevice (AddDeviceRequest) returns (AddDeviceReply);
+  rpc RemoveDevice (RemoveDeviceRequest) returns (RemoveDeviceReply);
+}
+
+// The request message containing the user's name
+message AddDeviceRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message AddDeviceReply {
+  string message = 1;
+}
+
+message RemoveDeviceRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message RemoveDeviceReply {
+  string message = 1;
+}
